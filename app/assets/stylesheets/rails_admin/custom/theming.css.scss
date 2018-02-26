@@ -1,0 +1,81 @@
+/* We can't get Heroku precompilation to precompile this file
+   (or even the rails_admin gem files).
+   So we have to precompile locally and checkin:
+   export MAILER_URL=localhost:3000
+   export RAILS_ENV=production
+   bundle exec rake assets:clobber
+   bundle exec rake assets:precompile 
+(If you don't remove tmp/cache/clobber, this addition ends up in compiled application*.css but not rails_admin*css.)
+Check date of tmp/public/assets/rails_admin/rails_admin*.css - can be old date, without this addition, even if rewritten!
+
+If we start to customize the theme, try creating
+app/assets/stylesheets/rails_admin/themes/goji/theming.scss
+and friends, add to developement.rb and production.rb:
+
+  ENV['RAILS_ADMIN_THEME'] = 'goji'
+
+And redo the above steps.
+
+  See the mess getting theming.* to work at 
+  https://github.com/sferik/rails_admin/issues/738
+
+ */
+.icon-decommission:before {
+    /* Relative paths here are relative to public/assets/rails_admin */
+    content: url(image-path("decommission.png"));
+    position: relative;
+    top: 2px;
+}
+
+.red{
+  color: red
+}
+
+.green{
+  color: green
+}
+
+.orange{
+  color: orange
+}
+
+.gray{
+  color: gray;
+}
+
+.dm_user_devices{
+  height: 100px;
+  overflow-y: scroll;
+  white-space: initial;
+}
+
+.progress{
+  margin-bottom: 0px;
+}
+
+#account_email {
+  width: 30em;
+  width: 30rem;
+}
+
+.alert-alert{
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.alert-notice{
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+
+.nav > li > a{
+  padding: 3px 5px;
+}
+
+.nav > li.dropdown-header, li.nav-header{
+  font-size: 16px;
+  padding: 4px 2px;
+  color: #777777;
+}

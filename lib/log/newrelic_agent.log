@@ -1,0 +1,20 @@
+# Logfile created on 2014-12-08 11:16:13 -0800 by logger.rb/44203
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Starting the New Relic agent in "development" environment.
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Reading configuration from /Users/parimashah/Goji/server/config/newrelic.yml (/Users/parimashah/Goji/server/lib)
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : New Relic Agent Developer Mode enabled.
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] ERROR : No application name configured.
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] ERROR : The Agent cannot start without at least one. Please check your 
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] ERROR : newrelic.yml and ensure that it is valid and has at least one 
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] ERROR : value set for app_name in the development 
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] ERROR : environment.
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Installing AWS SDK instrumentation
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Installing ActiveRecord 4 instrumentation
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Installing Net instrumentation
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Installing deferred Rack instrumentation
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Installing Rack::Builder middleware instrumentation
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Installing Rails 3+ middleware instrumentation
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Installing Rails 4 Controller instrumentation
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Installing Rails 4 view instrumentation
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Installing Rails 4 Error instrumentation
+[12/08/14 11:16:13 -0800 parimashah.tactelus.lan (65860)] INFO : Finished instrumentation

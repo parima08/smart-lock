@@ -1,0 +1,8 @@
+tags
+doc/*
+test/*
+coverage/*
+features/*
+*.psd
+*.pdf
+infrastructure

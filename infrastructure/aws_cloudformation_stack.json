@@ -1,0 +1,109 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Creates AWS cloud formation enabled resources for server instance",
+  "Parameters": {
+    "InstanceName": {
+      "Description": "Instance name (whole thing) such as goji-server-i2",
+      "Type": "String",
+      "Default": "goji-server-instance"
+    }
+  },
+  "Resources": {
+    "s3imagebucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": {
+          "Ref": "InstanceName"
+        },
+        "LoggingConfiguration": {
+          "DestinationBucketName": "goji-aws-internal",
+          "LogFilePrefix": {
+            "Fn::Join": [
+              "",
+              [
+                "S3Logs/",
+                {
+                  "Ref": "InstanceName"
+                },
+                "/"
+              ]
+            ]
+          }
+        }
+      },
+      "DeletionPolicy": "Retain"
+    },
+    "serveruser": {
+      "Type": "AWS::IAM::User",
+      "Properties": {
+        "Path": {
+          "Fn::Join": [
+            "",
+            [
+              "/",
+              {
+                "Ref": "InstanceName"
+              },
+              "/"
+            ]
+          ]
+        },
+        "Groups": [
+          {
+            "Ref": "s3group"
+          }
+        ]
+      }
+    },
+    "s3group": {
+      "Type": "AWS::IAM::Group",
+      "Properties": {
+        "Path": {
+          "Fn::Join": [
+            "",
+            [
+              "/",
+              {
+                "Ref": "InstanceName"
+              },
+              "/"
+            ]
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": "s3paperclippolicty",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:AbortMultipartUpload",
+                    "s3:DeleteObject",
+                    "s3:GetObject",
+                    "s3:GetObjectAcl",
+                    "s3:PutObject",
+                    "s3:PutObjectAcl"
+                  ],
+                  "Resource": {
+                    "Fn::Join": [
+                      "",
+                      [
+                        "arn:aws:s3:::",
+                        {
+                          "Ref": "s3imagebucket"
+                        },
+                        "/*"
+                      ]
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

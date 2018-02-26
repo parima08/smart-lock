@@ -1,0 +1,89 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  time:
+    formats:
+      short: "%F %T"
+      long: "%F %T.%3N"
+  admin:
+    misc:
+      navigation: "Tables"
+      navigation_static_label: "Tools"
+    table_headers:
+      model_name: "Table"
+    actions: 
+      view_logs:
+        title: "View Logs"
+        menu: "View Logs"
+        breadcrumb: "View Logs"
+      index:
+# eliminate "List of" at least until we can control show_management title.
+        title: "%{model_label_plural}"
+        menu: "List"
+        breadcrumb: "%{model_label_plural}"
+      decommission:
+        title: "Decommission Lock '%{object_label}'"
+        menu: "Decommission"
+        breadcrumb: "Decommission"
+        link: "Decommission '%{object_label}'"
+        done: "decommissioned"
+        are_you_sure: "Are you sure you want to decommission lock \"%{lock_name}\" belonging to %{owner_name}?"
+      show_management:
+        title: "%{model_label} '%{object_label}'"
+# XXX Wierd, this is the only one of these three that works:
+        menu: "%{model_label}"
+        breadcrumb: "Management view of %{object_label}"
+# Even though all of these work, even affecting show_management:
+#      show:
+        #title: "Showen %{model_label} '%{object_label}'"
+        #menu: "Showen"
+        #breadcrumb: "Showen %{object_label}"
+# Ditto!
+      index_management:
+        title: "%{model_label_plural}"
+        menu: "%{model_label_plural}"
+        breadcrumb: "%{model_label_plural}"
+      history_index:
+        title: "Sysadmin Actions on %{model_label_plural}"
+        menu: "Sysadmin Actions"
+        breadcrumb: "Sysadmin Actions"
+      history_show:
+        title: "Sysadmin Actions on %{model_label} '%{object_label}'"
+        menu: "Sysadmin Actions"
+        breadcrumb: "Sysadmin Actions"
+  activerecord:
+    models:
+      lock: 
+# Really only want to change this in navigation.
+# Apparently would require RA mods.
+#        one: "Lock (raw)"
+#        other: "Locks (raw)"
+      lock_management: 
+         one: "Manage Lock"
+         other: "Manage Locks"
+      key_management: 
+         one: "Manage Key"
+         other: "Manage Keys"
+      device_management: 
+        one: "Manage Device"
+        other: "Manage Devices"
+

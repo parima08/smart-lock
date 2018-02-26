@@ -1,0 +1,9 @@
+<div style="margin: 1em;">
+  <p><%= @from %> has invited you to access the Goji Smart lock "<%= @lock.name %>" owned by <%= @owner.full_name %>.</p>
+  <p>Use the Goji app on your smartphone to sign in and accept your invitation.</p>
+</div>
+<div style="background-color: #D9ECD3; padding: 1em; margin: 0; font-weight: bold; ">
+  Email: <%= @email %><br />
+  Password: <%= @password %>
+</div>
+<a style="display: block; border-radius: 10px; background-color: #d0342e; color: white; padding: 1em; margin: 1em; text-align: center; text-decoration: none;" href="<%= @url %>">Get the app</a>

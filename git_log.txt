@@ -1,0 +1,963 @@
+f41c70a Merge "LP19711520: logout from all devices on password change" into alpha2
+999c1ba LP16563591: Revised lock credential package including lock id and expire: restore user_id in user_device list.
+ef550d2 Merge "LPunreported: support ipod for testing (fix failed browser OS version check)" into alpha2
+a69efb1 LP19711520: logout from all devices on password change
+3765a27 LPunreported: support ipod for testing (fix failed browser OS version check)
+0dace3c 21047509 server: record password strength
+b3b84eb Merge "LP20720915 server: last_sign_in_at show correct information" into alpha2
+66c29df  19010907 server: design defense against brute force credential hack
+0ec1c6d LP20720915 server: last_sign_in_at show correct information
+620bb92 LP19335227 server: device health tool in sysadmin
+bf37796 Merge "20834763 server: Password strength feedback in sysadmin" into alpha2
+3618c29 20834763 server: Password strength feedback in sysadmin
+be9e65b Merge "LPunreported: uuid save blocked for user_device." into alpha2
+df86866 LPunreported: uuid save blocked for user_device.
+2e8345e Merge "LP21077749 30 minute RailsAdmin session timeout" into alpha2
+a401ce2 LP16563591: Revised lock credential package including lock id and expire. Add server-configured (Heroku env var) credential timeout. Tweak and document error event messages.
+a684d26 Merge "LP21116059 App poll for asyncronous event picture: GET /events/id, picture_pending" into alpha2
+c607e5c Merge "LP21139151 PUT /users/<email> not rejecting email conflict with authed user. Add test cases for missing and empty old password on change password." into alpha2
+10bfe26 LP21116059 App poll for asyncronous event picture: GET /events/id, picture_pending
+7d76e1c LP21077749 30 minute RailsAdmin session timeout
+e0e7126 LP21139151 PUT /users/<email> not rejecting email conflict with authed user. Add test cases for missing and empty old password on change password.
+88ffdf7 LP21030467 Making app types accepted are consistent for POST /logs
+9a935d1 LP21110868: failure to send notification of new device: GET /authtoken not updating authenticated_at field on login. Force logout of old device sessions on login. Test delivery of new-device notification to two EXISTING devices. Turn off notification testing by default pending resolution of erratic AWS behavior.
+a0562b6 LP21058847 Enable/improve AWS notification testing Allow disabling AWS in testing for performance. Record the notification device counts in database.
+9d30a72 LP21062872: do not show events from decommisioned locks
+81cde95 LP21054810: stop ignored, harmless exception reported in log
+6a7036c LP21054646 BUG New device confirmation email sent unasked-for
+7a75270 LP21035529: notification strings pm/am lower case
+2bcd557 LPunreported: Refactor picture query to use parameterization
+ac7c162 Merge branch 'master' into alpha2
+b862535 LP18519865 server: misc Admin tweaks   --Limited has_many relationship in key.rb and lock.rb (the number of events returned)   --Improved the has_many edit module - allows you to edit or delete certain children objects Change-Id: I5a8874fb166a9ac5a5f0a08c1d069c97dee1d374
+a0ceb0e LP20825030 event for commissioning sent to apps
+d81646f LP20979208: Simplify new device notification for alpha2
+2e0d7a7 LP19534024 Move AWS Push ARNs to environment config
+20f3c77 LP17599188 Requiring SSL and sysadmin to upload firmware
+947aefd LP20935108 Resolving broken lock authentication
+50ebec2 LP20803774: delete performance (esp. lock delete H12 hang/timeouts)
+8f2452f LP21008014: Corrections to GET /authtoken new device confirmation logic Report unconfirmed device, trigger confirmation email resend. Also, fix problems running certain test cases with "m" utility.
+f5d626e LP20931984 Returning 403 Forbidden when a incorrect password is given on a password change
+414e5e3 LP20262491 server: sysadmin: search by lock name
+4705087 LP20645141 Automatically terminate clock process as needed
+ef9f82b LP20935234 Updating error handling to use new ErrorRecorder class
+5f961e4 LPunreported: Commissioning broken on alpha2
+cbcc89d Merge remote-tracking branch 'origin/alpha2' into gw2
+f4a45ba LP20727076  Make sure wifi up/down times are not based on updated_at timestamp
+4073e2b Merge remote-tracking branch 'origin/alpha2' into gw2
+d91ad81 LP20905495 Using Pacific Time for alpha1 notifications
+0114887 LP20701781 Improved Error Reporting
+945cc8f Merge branch 'master' into alpha2
+47cfce3 LP20824500: BUG UUID for key revoke events incorrect Many other UUID's not getting set. Fix a couple of random test time errors.
+5a26076 15878448 server: Finish upgrade of devise (authentication) gem: added security
+4c82921 19361227 server: Error event when lock rejects credentials
+03aad37 LP20857341: Don't show events on Sysadmin Locks#show
+0d5495e LP20859239: correct OTA string limits on version and download_url
+db92b0c Adding back not-really-broken test for picture/event matching
+a0fa0c3 LP20476086/LP20174829 Reworking Locks controller to separate lock and app
+24bf217 LP20728877: fix lock management wifi downtime %: using lock and event created_at instead of commission_date and event_time. Also add some missing fields in the lock management view details screen.
+1d68530 20138636 server: limit unsecured (or lock-secured) POST /events to lock-sourced events Rebased.
+5a20b81 LP20709235 Adding user_id and user_display_name to push payload
+e458439 LP20704356 Increasing client_body_timeout to 25 seconds
+73ca190 Merge "LP20674188: full time resolution in mSec in DateTime display. Also fix wierd test issues with firmware version, lock create, obsolete time_constraint.*_time."
+ced9f8b Increasing client_max_body_size to 15m
+d3b90c2 Fixing broken lock edit screen
+b9ed4ac Merge commit '5583fbb' into alpha2
+1b24dfc Fixing assets
+0857826 LP20674188: full time resolution in mSec in DateTime display. Also fix wierd test issues with firmware version, lock create, obsolete time_constraint.*_time.
+938d07b LPunassigned: Moving sysadmin changes to Master LP17994811 server: custom support workflow #1: lock health LP19040177: choose and deploy view testing for sysadmin. LP20246069: cleanup of lock status admin page LP20246069: cleanup of lock status admin page: rebuild assets BUG: LP20201642: failure on sysadmin lock management info screen LP17968396 server: configure default firmware version
+5583fbb Merge "LP17307288 Async image Upload part 3: eliminate picture connection failure when picture.taken_at is slightly after event_time."
+dcf4dcc Schema.rb change
+c7f35ef LP17307288 Async image Upload part 3: eliminate picture connection failure when picture.taken_at is slightly after event_time.
+089b446 LP17307288 Async image Upload part 2: connect pictures to events. update: add pictures only to lock/unlock/proximity events. List events in sysadmin pictures screens.
+99d169f LP17307288 Async image Upload part 1 (POST /pictures Endpoint)
+e5a7d1f LP20528639 Add key_user_id to GET /events
+65d0d5d LP20498036 Reducing events return to 30
+2df3b75 LPunreported: allow running tests with Arxan disabled.
+11bfdd7 LP20354603 Update to the POST /locks method
+1e1145a LP18010520 Forcing SSL for all endpoints when a authtoken is present
+89cf88f LP20394599 cont.: fix test issues caused by merging LP20361074 (tests must pre-create authentication_token in comfirmed accounts+user_device)
+a9a83c2 LP20394599 cont.: Eliminate possible race condition on credential update.
+8bdc3ab LP20394599 cont.: Move new device confirmation to PUT /user_devices. Disallow new device confirmation from same device.
+f2ee2e6 Make it easier to disable ssl in production when testing locally. Comments. suppress warnings in data.rake
+facec9e LP20246069: cleanup of lock status admin page: rebuild assets
+ab9a38d LP20394599 Handle account creation on already registered device. Update device properties in addition to ua_token on GET /authtoken, PUT /users/email
+64a5874 LP20394599 Mark credential package dirty when user_device keypair is created.
+efe856c LP20394599 Display user_device.confirmed_at in sysadmin.
+02931dc LP20394599 Failed to set user_device confirmed_at at account create.
+334ef28 LP20394599 Misc device creation fixes: Require device_type on GET /authtoken, ua_token optional, create ua_token-less device record. Disallow auth on unconfirmed user_device - restart confirmation sequence. Same ua_token on different device_type is not same device. Add obsolete database field notes. Trace header params (temporary).
+4aab19b LP20254914: Fix upload_firmware.sh authentication for new secure GET /authtoken rules
+1059bd0 LP20263595: Change confusing key name=lock name on events, etc. to key owner display_name Continue expunging key name field.
+dfe34c6 LP20361074 Bug fix: the authtoken should be created at per sign in rebased.
+9e2f7eb LP20246069: cleanup of lock status admin page
+2cb638b LP20354603 Only allowing single, non-decommissioned record per serial
+a9ebaef LP20354603 Don't allow uncommissioned locks to be decommissioned
+9a359f2 18731512 server: add lock label field to lock record This patch is for alpha1 branch sync from alpha2.
+8596c7f LPnotreported: Slightly incorrect path for S3 logs
+318a45a LP19335321 Disable endpoints (alpha2)
+2eae41f LP19803406 Updating mail gem per Heroku recommendation
+05684c7 update API spec with signed key payload, remove extraneous date fields from key_info.  Same key_data/key_info payload in all key replies. Change GET /authtoken signature order to convention (after signed hash).
+96fcac4 LP20233806 Not returning keys from un-commissioned or decommissioned in scope
+9a0afb3 LPnotreported: error on new firmware screen
+f1f4505 Enabling firmware uploads to production per team discussion
+0348e6d BUG: LP20201642: failure on sysadmin lock management info screen
+0c32fc8 LP19781083 Refactoring push notification sending code part 1
+b983731 Merge branch 'master' into alpha2
+5d15178 Updating asset pipeline files
+4694c62 Updating AWS Template to turn on logging by default upon bucket creation
+dcecde9 missing Gemfile.lock for view testing (Capybera)
+74d16c2 LP18997218 Move GET /authtoken credentials and authtoken to HTTP header: corrections to previous commits: Rails 4 upcasing of header names is a mess, can't be tested except via curl.  Update alpha2 integration test to use headers.
+8e4b112 Bunreported, adjustments to event tests (manual unlock, clear doc of day bitmask)
+2138568 LP19872663 BUG : Fixing key update, so that a expired notification will go out again after a time change
+e42b5e8 LP15928889 BUG: Check for correct user/key/lock relationship when adding event
+7d66b98 LP19040177: choose and deploy view testing for sysadmin.
+871e6d9 LP17994811 server: custom support workflow #1: lock health -CSS compiles/is included in the asset_pipeline in rails_admin
+e412db8 LP18878918: bug in multiple users per device: allowed login with no ua_token or device_id. LP18997218: Move GET /authtoken credentials to HTTP header
+6c4f1cd 19904490: Missing ending period on most messages, missing event nil value check
+2b3a6dc Merge "Bunreported: longer delays for unreliable tests with race conditions" into alpha2
+0aac22a 19550452 server: validate time constraints in unit tests
+1356370 LP16570925 cleanup: registering additional mobile devices to an account
+8568c42 Bunreported: longer delays for unreliable tests with race conditions
+9e2984a LP19685529 Checking email for URL in integration test
+e86ddee Merge "LP16570644: send device_user id with Arxan keypair." into alpha2
+d62f390 LP16570644: send device_user id with Arxan keypair.
+052d6ed Merge "19686563 registering additional mobile devices to an account" into alpha2
+33c7300 19686563 registering additional mobile devices to an account
+a98aecb LP19678574 Removing pictures and seq_nos controller
+e2572fd LP19685529 Start of a integration test to show login flow
+fad1e48 LP18265715 Adding store endpoint to the stores_controller
+53d3684 LP16570644: generate/store/transmit user device Arxan key pair during account creation/added
+15746c8 18118964: server: signing of entry key data
+99fcd97 LP18878918 server: switch endpoints from ua_token to device_id, misc. beta controller changes for per-device authentication. Change user_devices.authenticate to datetime
+9e736c1 LP19746980 Fix broken decommissioning from admin portal
+89b9b9f LP17968396 server: configure default firmware version
+4158ffe LP9118356 server: device type tracking
+576e71e LP19335276 Starting to track some infrastructure building code
+ad41ca8 LP19573973 Removing unused parameter checking code
+2e23cab LP19335011 Forcing SSL for sysadmin pages
+14c09db LP?: disabled unused locks_users controller.
+9443ec5 LP18818002: Sort sysadmin ui table navigation
+2dac758 API spec more minor beta security updates
+167430f LP19377332: generate new key id on change to secure data Switch signing with master key from sha256 back to sha1
+4d8e0f0 LP18546346: endpoint for lock to fetch account key package from server
+046d5ce preliminary beta security
+54cfba7 LP16570925: Minor new device notification/email corrections.
+a62d068 LP19566677: Add reboot and debug_log flags to lock & manage lock edit/show screens.
+affbd29 Merge "LP17050532 server: wifi up event not triggered by all lock events - Refactored (one save) *This commit creates new events and push notifications for the user if the wifi status changes"
+d1830d9 16570925 registering additional mobile devices to an account
+de28b62 Merge "LP17721652 server: expire the new account/changed email confirmation emails" into alpha2
+1c3d52c LP17050532 server: wifi up event not triggered by all lock events - Refactored (one save) *This commit creates new events and push notifications for the user if the wifi status changes
+cdc0fee LP17721652 server: expire the new account/changed email confirmation emails
+9762ff4 LP19389511: Not authenticating from app on some endpoints (/events, /locks). Bunreported: GET /logs not returning data for decomissioned locks.
+5287960 LP19361141 fixing notification message about lock/unlock failures
+42c281c LP18818755 Adding user_id to last lock event
+00970ac Rollup of failed merge:
+96c2057 Fixed bolt state/wifi update in event controller
+de4537c Merge "unreported: get more records logs viewable. A few sysadmin field display list adjustments."
+6c7a4f6 Merge "LP:19293121 Time constraints display error in sysadmin: Handle offsets > 1 day."
+17c5634 Merge "17617170 server: move config/initializers/*.rb security tokens to environment"
+648c415 Merge "LP17050532: wifi up event not triggered by all lock events."
+2c7b2dc LP17050532: wifi up event not triggered by all lock events.
+413cfba unreported: get more records logs viewable. A few sysadmin field display list adjustments.
+5c136e6 LP:19293121 Time constraints display error in sysadmin: Handle offsets > 1 day.
+74cd3cd 17617170 server: move config/initializers/*.rb security tokens to environment
+ac58bf1 LP19248223 BUG Changing lock name does not change corresponding key name
+52fbf2d LP:19293121 Time constraints display wrong in sysadmin, cause server error.
+5ba17d2 LP19285944 Fixing notification breakage around date parsing
+a7771e7 Code Cleanup for Server Logs -- Changed the layout to display server logs to a table from a list -- Cleaned up code to use .try Change-Id: I00eefbfa6a28f2a105d7f93b8da760232fef8b82
+bd00b26 Fixes for LP17964291 server: view server log from admin console
+7f04fb2 LP18743087: allow creating new sysadmin account from admin console New admin account tool. Complete config to allow email test delivery from development. LP18932985: Can't create new account/user record in test database (data.rake)
+43f1a8f LP18948259 Resetting token on every every POST /devices for Alpha1
+c2d6ca7 LP18571916 Fixing issue with Android redirect
+95f865a LP19084598 Fixing broken images in emails and store/go
+d40c10b LP18696893 Increase Wifi status check time to 1 hour
+ff53ff8 LP18800846: select required firmware from list in lock management screen
+59ad312 LP18818003: Heroku precompile doesn't work, precompile locally. Proper generated asset path in theming.scc.scss.
+bac8156 LP18818003: Heroku precompile doesn't work, precompile locally. Proper generated asset path in theming.scc.scss.
+98b87ff patch prev checkin: Forgot to handle down/rollback. And indices aren't being deleted on a partial migration of an existing pre-schema_plus database.
+217c1ed Switching to i2 server (mid sprint switch for large change)
+990405d Merge "BUG 19040137: Multi Device Version Comparision rounding incorrectly"
+b5ef50d LP18369938: Searching of admin table view id fields by user name add schema_plus for view support, bonus foreign_key support. Update: corrections to schemas (can't foreign_key logs->devices yet)
+b7476f1 BUG 19040137: Multi Device Version Comparision rounding incorrectly
+6fb92c8 Device field display tweaks: Device # on empty name, remove obsolete last_access. 18105407: decommission a lock from sysadmin ui. New TOOLS section, filtered. 18818003: Hide useless/harmful stuff in TOOLS screens (key management revoked filter tbd) Move images from public/assets to app/assets/images so we can rebuild assets on deploy.
+9792a84 LP18948259 Try to send push to every device even if one fails
+6aadd9c Merge "LP16071817 server: Handle mobile/desktop multi-device email notification issues"
+28d8d3f LP16071817 server: Handle mobile/desktop multi-device email notification issues
+28d6b83 LP17964291: Adding UUID to database/rails admin custom action
+6ddf627 Merge "18118909: generate and deploy Goji master key pair"
+9753de9 Merge "Better presentation of time_constraint time offsets."
+62b54a3 18118909: generate and deploy Goji master key pair
+7462e43 LP18465588: Update push notification strings to match UX team edits
+659c871 LP17647048 Replacing UrbanAirship with AWS SNS
+73bd2df LP18800070: Removing unused confirmation controller, and removed unwanted Devise routes
+2c69263 Better presentation of time_constraint time offsets.
+992f865 Merge "LP17911003: Fixing TimeConstraints to show start_offset and send_offset"
+45b0aaf End of Sprint 11 Data Move
+cc598af Add rake db:add_users so we can add new test accounts to running server.
+dca44df LP18105407: decommission a lock (part3): Validate active lock_serial uniqueness, prioritize selecting active locks
+cbac7db LP18397184 admin: preconfigured search, TOOLS lock and key screens.
+b182924 LP18105407: decommission a lock (part 2): Recommissioning behavior, exclude decommissioned locks from .active and GET /locks. Sysadmin decommission action and filtering TBD
+2b1ef9d LP18105407: decommission a lock (part): Decommissioning endpoint. Handling of decomissioned locks and sysadmin action TBD
+4509fe9 LP17911003: Fixing TimeConstraints to show start_offset and send_offset
+e06214a Merge "Add test app account for decommissioning, Goji staff sysadmin accounts."
+ec8d35c Add test app account for decommissioning, Goji staff sysadmin accounts.
+a23c431 LP18466607 Fixing noauth exception and turning on SSL for outgoing email URLs
+c2cd0cd LP18673866: missing bolt_state in GET /locks
+46336ea LP17911003 Filtering "data" parameters in logs
+05f1b96 LP18523986 Moving the key injection for admin emails to the event, and fixing so it pulls the right key
+bfaf189 Merge "LP18571916 Add a server page to handle redirect because Gmail removes custom URL links"
+3f32285 BUG: 18454077 key_revoke e-mail is not sent
+1a64675 BUG 17592735 Uncomissioned locks shouldn't trigger Wifi events
+f4d437e LP18571916 Add a server page to handle redirect because Gmail removes custom URL links
+8166ddc LP17911003 Fix issue with slow loading caused by events and notifications
+4c6597f Merge "LP1796421: Adding UUID log tag per Heroku recommended setup"
+6b2373c LP1796421: Adding UUID log tag per Heroku recommended setup
+d23d177 LP18443422 Removing Airbrake
+f7e5155 Merge "Admin: Show lock.lock_serial, filter on key.revoked Performance: use models instead if id's (per recent ticket by SR) LP17556539: Review remaining XXX in code for needed alpha items: Fix/improve parameter error messages in replies. Add transaction on create key. Prevent random db order from breaking tests."
+d2638e6 LP18447017 server: fix editing log data/store log_data decoded in database
+2e6d9e2 Admin: Show lock.lock_serial, filter on key.revoked Performance: use models instead if id's (per recent ticket by SR) LP17556539: Review remaining XXX in code for needed alpha items: Fix/improve parameter error messages in replies. Add transaction on create key. Prevent random db order from breaking tests.
+99f4882 LP17989440 server: export Firmware event log blob to file
+01f01d4 BUG: Fixed lagging loading times
+0f0ab7f LP18591091 Changing to after_commit rather than after_save
+9192603 LP18570603: fix admin table column sorting LP17556539: Review remaining XXX in code: refactor: create share event for owner, suppress notifications.
+7cbb6ef Merge "LP18539782 Fixing time_constraint comparison function to use offsets"
+1802243 Merge "LP18391530 Tiny cleanup of push notification message generation"
+f42cd03 Merge "LP18447017 server: view app text event log in RailsAdmin UI"
+502bc0c LP18539782 Fixing time_constraint comparison function to use offsets
+67e0488 LP18391530 Tiny cleanup of push notification message generation
+6909215 LP18330658 Updating to generate and send temp password on every share to unconfirmed account
+ba115bd LP18448203 server: Get all fields always displayed in admin details screens LP18548116 server: remove admin "eye" action Some final cleanup of displayed lock/user record names.
+cfb1024 Merge "Fixes log out on the home screen of the Admin UI"
+550612a Fixes log out on the home screen of the Admin UI
+86be195 Merge "LP17910966: all key selects for failing to limit to active keys."
+5e094a0 Merge "LP17911003 Updating reset password email per John's note in LP17652862"
+46b9235 LP18447017 server: view app text event log in RailsAdmin UI
+03c1d0f LP17910966: all key selects for failing to limit to active keys.
+d249ad0 18443387 Remove Notifications controller and related from source
+35e66e0 LP17911003 Updating reset password email per John's note in LP17652862
+5a5f088 LP17598315: search, misc improvements in the admin UI:  - Search User by name/email  - Show email in Account if no name  - Better event/notification record descriptive strings/titles.  - A pass at selection and ordering of fields to display in many    tables, both list and details.  - Basic log data display (binary as hex)  - missing LocksUser created_at+updated_at  - remove unused notification recipient field. LP18428646: evaluate admin services: test integrate ActiveAdmin (so upgrade devise to 3.4, many other Gems) Unreported: Add tests for manual lock/unlock, nil event.bolt_state, event_type LP18428935: differentiate logs from android and ios LP18371627:choose most valuable model fields for admin db table screens. LP18484851: admin event edit screen errors with no string_value (missing nilify) followon: restore checking for nil event.string_value on status events, tweaks to locks.Administrators editing, possible nil key in TC error.
+f4e10a6 LP18370116: test/fix error handling for strings too long for db
+d68fad2 LP15782070 AWS image transfer error handling
+c5d85ca Merge "LP17911003 Fixing exception thrown when a lock has no name"
+9217c3a Deploy out to i2 - database files
+c3ad02f LP17911003 Fixing exception thrown when a lock has no name
+3aa6709 Merge "LP18419891: Limit String Length in the upload_firmware script"
+72b0fed Merge "LP18268841: Update events sorting with lock time"
+f5859c6 LP18419891: Limit String Length in the upload_firmware script
+07e2987 LP18268841: Update events sorting with lock time
+a5b942b LP16620477 (MIGRATION) Tracking user during key revocation
+cae2fee Merge "LP17625515 Fixing failure with Sprockets"
+0107144 LP17991962: Add lock maintenance commands to lock sync
+0af7775 LP17393133:  Limit user-entered strings to firmware length limit
+185edc8 LP17625515 Fixing failure with Sprockets
+93a1715 Merge "LP18268520 Fixing push notification structure to help Android"
+bb69e1e BUG 18214172 Validate that lock orientation value matches the constant
+b4c0939 LP18268520 Fixing push notification structure to help Android
+cea3cf7 LP17625515 (bug fix) System Admin's are not getting correctly authenticated
+cf3f6f9 LP18207550 Accepting and return start_offset and end_offset
+cbba831 Fix for test to resolve time drift issue on Jenkins
+007d1b7 Merge "LP18214172 Biting off another chunk of updates"
+1d986f3 LP18265715: resend access invitation API request Must generate new temporary password - but only if key owner's account is unconfirmed.
+276b697 LP18287839 BUG: PUT /locks picture upload not working, reply payload is missing fields Disable image_url in lock payload for now to protect firmware (feature is unused)
+0ec470d LP18265715: resend access invitation API request Must generate new temporary password.
+e64afa9 LP18287839 BUG: PUT /locks picture upload not working, reply payload is missing fields
+0e3bd3f LP18214172 Biting off another chunk of updates
+00b201c 17909874 server: informative validation messages returned to client
+bd04051 Merge "LP17149960 Fixing issue that admin=false would cause a admin canceled event, even if it wasn't one"
+78510f5 LP17149960 Fixing issue that admin=false would cause a admin canceled event, even if it wasn't one
+7471f12 Merge "LP18262645 Updating push notification to standarized payload"
+0648d74 Records Init for Sprint 10
+e6b76eb LP17596140: secure pictures on S3 stop picture accumulation in S3 from integration. Remove unused key image. Consistent image url expiration. also clean up obsolete demo hacks in data.rake, and a failure loading saved locks in prior checkin.
+ca47765 LP18262645 Updating push notification to standarized payload
+5365a56 LP17031947: Hard Limit items returned for GET /events
+ffc1783 LP17149960 Fixing double push notification on keys share events
+cc8b040 LP17488280 Applying nilify to Firmware description
+68c872e LP17488280 Adding nilify_blanks to User, Device & Account
+86b524e LP17488280 Adding nilify_blanks gem, and applying to Locks model
+877748a LP17486295 Upgrading Ruby to 2.1.3
+1708edc LP16796157 Updating to Rails 4.0.10
+b70b07e LP17659716: script saving commissioned locks to db init. Fix lost passwords and authentication_token.
+82e93c8 LP17488280 Nilify zeros on events and notifications
+d8cdcd4 LP17722597 Cleaning up Devise sent emails to use common layout and formatting
+7d5592a LP17589772 Adding very basic forgot password functionality
+cbc2ae3     LP17659716: script saving commissioned locks to db init.
+a8af44b LP17909116: debug log endpoint and database tables LP17974371 add model methods to improve naming of owned records in admin console
+1c6224f LP17659716: script saving commissioned locks to db init.
+968e76b Merge "LP17596480 Adding Dennis and Yong to users list"
+5b7c459 LP17596480 Adding Dennis and Yong to users list
+a8ceaf9 LP17590956 Adding test method to trigger an exception on demand
+58573aa LP16806535: Updating to latest 3.x Paperclip
+3cd06b4 Merge "LP17832606 Updating out of date gems, round 1"
+8910279 Merge "17988888 Removing "Reload Data" button from admin interface."
+5d9c8d3 LP17596480 Removing real serials from the DB
+7df289f 17988888 Removing "Reload Data" button from admin interface.
+5abaa7f LP17832606 Updating out of date gems, round 1
+be1989c LP17956101 Fixing validation around duplicate keys to handle revoked
+18eac03 LP16093426 Cleanup HTTP response codes, log errors, complete response validation. LP17884950 disable DELETE /locks
+17f5be1 end of sprint 8, plus draft /log endpoint
+aaf40c1 LP17279356 server: Log error message string for debugging. LP16093426 refactor HTTP controller error response pattern.
+4167264 LP16183403 Restricting key creation to one key per lock & user
+9a875f4 LP17503209 Updating to resend confirmation through PUT
+bafc9de LP17596524 Adding uniqueness check for firmware version
+74e4727 LP17723001: Implement access emails E.3-E.5: some had wrong addressee email, from noreply@gojiaccess.com. Fix some test issues caused by new keys params.permit list. Remove/correct some dead checks for event_type failed*
+c10edb6 LP17723001: Implement access emails E.3-E.5 Also, some additional general email content fixes, and configurable to actually send during test run for inspection.
+b2bad86 LP16528342 Fixing .slugignore to not remove PNG images
+d200633 LP17595801 Adding accounts to data.rake for new users
+4ce8e9d LP17540060 Handle changing pending status
+b15f1d7 LP17721942 Making PUT users password parameters consistent
+2af4ea6 LP16528342 Gmail on Android doesn't like generated emails LP15519292: redirect page to app store, rework sharing email
+a4aefce Merge "Put development AWS tokens back in source for simplicity."
+82c6f29 Merge changes I74440322,Iadc8fc6c
+8c7ea04 Put development AWS tokens back in source for simplicity.
+85afe0e Complete log and tests of notification messages, add missing battery ok message.
+df6a847 LP17279550: OTA control for alpha: copy firmware records from heroku instance
+c4d074c LP17565522 Reworking for clearer updating of keys
+dc042a6 LP17565522 Adding validation at model level, and preparing to accept empty parameters if needed.
+695ef5f LP17475423 Add support for GET /locks/<lockid> to return single lock record
+afbb75d LP16093426: Clean up HTTP response codes for API calls
+bc5e07f LP17617349: config DRY collapse, explicit setting flags
+e0c8d6b push initial firmware images to staging/production.
+6816013 Minor improvements in lock/unlock failure notification messages.
+299da2b Merge "LP15517699/LP15223786:  Q.1-2: edit account settings, reset password"
+27cb473 LP15517699/LP15223786:  Q.1-2: edit account settings, reset password
+7f5bde8 LP17279550: OTA control for alpha: Allow replacement of firmware file. More broken-down OTA download url components for alpha lock.
+008d111  LP17279550: OTA control for alpha: Archive Firmware records to seeds.db Sprint 9 API spec. More event constant updates.
+62b03c4 Merge "Revert "LP15635957: Change server API to accept images as binary""
+56f13e5 Revert "LP15635957: Change server API to accept images as binary"
+18852a9 LP17495072: Support Lock Commissioning
+41aeffa LP15635957: Change server API to accept images as binary
+be64297 LP16805976: Update Server Timers tests
+3005102 miscellania: Add .env to .gitignore, is not source Integration config needs minitest. LP16093426: Better event bolt_state validation, event controller errors. Correct event tests to be valid cases, finish using goji constants. Minor email language/spelling corrections, make sense if viewed off-device.
+957e118 LP17279550: OTA control for alpha: Fix bad "external" in internal_url. Add external/internal_ip so lock can avoid DNS. Remove external/internal_urls from GET/POST /locks (not needed) Fix intermittent test failures due to db select order.
+7b0a20e LP17253615 Remove "Access" event type from server
+f254911 LP16689958 Removing double saving of lock data
+8d424ba LP16805976 Fixing Rakefile by checking environment per Parima's suggestion
+6869c56 LP17282239 Adding the state of the bolt to the events table and notification
+ab92ca8 LP17279550 server: OTA control for alpha noop reformatting of config/environment/* new integration config More simplified test patterns Removed a gem that cause build breakage with new ruby. Remove AWS credentials from code.
+baa8233 minor test improvements. differentiate failed re-revoke action with 406 error
+89b2cb1 LP17313251 Adding MarkV to default users list
+0b5ffc3 LP16805976 Reverting rakefile to run on Heroku
+419601e LP17273284 First try at a basic integration test for admin key sharing
+d46072e LP16805976: test server timers
+4ee1328 LP16689958 Adding tracers for process_picture and get_payload_hash and aws-sdk
+33185b2 LP17034758 & LP17151166 Switching to bolt_state and updating payloads from server
+9432ab6 LP17151166: Adding in new event types to main code
+12eab25 LP17287446 Fixing naming of users.locks associations
+f077acd LP16946208: Updating to newly available LOCK_COMM constant set
+e3f4994 LP16689958: Fixing N+1 queries on GET /events
+d894be1 LP16689958 Adding ENV variable to adjust web processes and GC profiling
+140b988 LP17313378 Adding ENV to switch on/off content-length header
+26e3d01 LP16689958 Updating unicorn and pg gems
+b05440c LP17253707: Move debug messages from puts/print to logger
+92f886e LP16689958: Updating NewRelic gem for performance evaluation
+cc80b99 LP17155860: Updating gem aws-sdk in hopes of fixing random S3 timeout error
+af765b6 LP15969016: Bump ruby version
+647379b LP15784067: give/revoke Admin access: finish validation and testing (mostly done) LP16542644: complete notification on admin/access time changes (tests and bugfixes finished) LP17112684: key POST/PUT admin restrictions (complete except one POST check)
+50c8a47 Undo the original fix for the jenkins server with another fix
+d8a3c13 Merge "LP17153340: BUG Events without keys break GET /locks"
+d448b1d LP17153340: BUG Events without keys break GET /locks
+c9a01fc bugfix to recent admin changes, which deprecated auto_generated field, which broke data.rake.
+8b9d220 Merge "LP17178168: GET /locks should only return owned and admin'd locks"
+e201ad8 Fixing the jenkins build from failing 50% of the time
+9c89e36 LP17178168: GET /locks should only return owned and admin'd locks
+cf66c22 LP15514236: Revoke Key
+43af337 Merge "LP17184172 Trying a fix for SimpleCov merging of coverage numbers"
+e0ac4ad Merge "LP16542644: guest notification on admin/access time changes: remove extraneous unrelated prototype table"
+4d149f3 LP16542644: guest notification on admin/access time changes: remove extraneous unrelated prototype table
+bdcb016 Merge "LP16542644: guest notification on admin/access time changes: complete PUT /keys, trigger admin&access events misc other fixes and more tests."
+b42f878 LP17201987 Trying to add content-length header
+b2b401e LP17184172 Trying a fix for SimpleCov merging of coverage numbers
+1d9bef5 LP16542644: guest notification on admin/access time changes: complete PUT /keys, trigger admin&access events misc other fixes and more tests.
+5bb06a3 LP16099566 Update gems that have fix for STDOUT logging issues
+3090ab9 LP17111816 Updating application code to use constants, stage 1
+978bf29 LP17111816 Fully auto-generated version of goji_constants.rb
+070475b LP16622793: BUG 16622793 Push Notification when Admin shares lock with new user includes blank name
+e45a5c1 LP17111816 First draft at constants based on generated code
+9f21acb LP16505249: Added Admin auth to GET /locks - A.5 Wireframe
+c9d8159 LP16620876: Adding admin_user_display name to GET /events
+0073a28 LP16542644: guest notification on admin/access time changes: PUT /keys (incomplete) LP16920535 BUG: Keys auto_generated is improperly set
+8b0eea0 LP16920012 Showing env variables in Rails Admin header
+5c9b093 Merge "LP15798328 server: event notifications to admins: full validation (incomplete) LP16542644 server: complete guest notification on admin changes (incomplete, access time changes tbd)"
+f5d9e26 LP16954520 Adding integration testing accounts to reset script
+b47f2bf LP16946208 Fixing namespace conflict with clock.rb
+085f569 LP15798328 server: event notifications to admins: full validation (incomplete) LP16542644 server: complete guest notification on admin changes (incomplete, access time changes tbd)
+4bee570 LP16517530: add check for unchecked fields, fix merge problem, misc test cleanup
+412ac1d LP16517530 server: validate id and seq_no in all reply payloads
+907e873 LP16783001: Added event information to Push Notifications
+68cd36c LP16517530: add check for unchecked fields, fix merge problem, misc test cleanup
+355a64a LP16439845: trigger wifi events on lock status sync
+698c2c8 LP16517530 server: validate id and seq_no in all reply payloads
+97bb4f8 LP16918299 Fix bug where all keys are marked as admin
+afcd7bf LP16646779: Restore Event Information in the Notifications Payload
+8fc5c5b LP16517530: Applied new testing pattern to controller tests
+730a4e2 Merge "LP16450775: Properly validated parameters and added 40x params"
+c3bfed6 LP16450775: Properly validated parameters and added 40x params
+8d3af41 LP16317686 Updating emails to be sent by notification class
+8f4e0a7 LP15878496 Updating rails to 4.0.9
+d7b3f23 LP16479857 Email addresses no longer case sensitive
+49be53e Merge "LP16517530 server: properly validate all fields in all reply payloads Fix up server_time checks."
+58025a6 LP16540624: Added admin option on create key
+6424ac3 Merging staging into master to keep master up to date Merge branch 'staging' into mergestaging
+a2ba247 LP16543233 Updates to default events data
+0821d39 LP16517530 server: properly validate all fields in all reply payloads Fix up server_time checks.
+4c7468c Merge branch 'staging' for DEMO changes - Adding changes made to demo server
+74f2d1e LP16543233 Adding additional demo accounts
+3ba17bf LP16681067 Updating lock.status on lock/unlock events
+116fbd1 LP16673536 bug: reply times only in second resolution LP16669871: server_time not in UTC format; notification strings should NOT be UTC More test coverage
+fa392b8 Merge "LP16678929 Sorting events by server time"
+96dc198 LP16678929 Sorting events by server time
+b203c75 LP16543233 First go round at demo accounts
+00c0714 LP16673106 server bug: /devices ua_token, not device_token Tighten up date format testing Update comments for all db field changes in initial.rb
+39cac86 Merge "LP16658159 Disable badge updates on pushes"
+ace97ef LP16658159 Disable badge updates on pushes
+daa40c4 LP16598025 server: temporary for demo: delete any existing key on key create.
+b7ae816 LP16656161 server: temporary for demo: pass lock name in key.name
+8335c7e Fixing for previous keys...this may go away later, but needed for now
+8728ae0 LP15978090: Push Notifications for Android Devices with db changes
+df42fc9 Fixing broken test from patch 184
+fd36bcb LP16601048 DEMO server: Add user info to GET /keys, expunge display_name amend: sharer_id always set.
+9664d29 Merge "LP16448914: Add test that automatically validates any db field returned in a payload"
+e94ca75 LP16448914: Add test that automatically validates any db field returned in a payload
+bc78685 LP16607951 Correctly setting user id on key_shared events
+fe55de2 Merge "LP16607235 server: remove key_data sub-array in POST /keys."
+e25f1ec LP16571130 Updating events returns to include info for app team
+1924f1d LP16607235 server: remove key_data sub-array in POST /keys.
+b6ba9f7 Merge "LP16546743 Adding picture_url to events listing, also added order_by"
+ff6600c LP16546922 Adding test to validate restricted time record creation
+9631040 LP16546743 Adding picture_url to events listing, also added order_by
+fa7ad08 LP15798328 Adding a case for testing Events with zeros as parameters
+655b292 final sprint 4 v0.0.7 spec
+ac0ba53 LP15976377 Fixing parameter so DELETE works for devices
+1b224ba LP15516492: Added lock commissioning test
+e4a0991 LP16317686 Updating and refactoring emails, adding layout file
+6d9da81 LP16318428: key order in reply payloads
+495408b LP16048893: keyWas* notifications to lock owner/admins: proper messages. Notifications logged, tests partly cleaned up, corrections to notification generation logic. checkin missing db/migrate/20140731153138_add_admin_events.rb Amend by Steven: Adding missing schema.rb Completes LP16190617 checkin
+f31cd42 LP16427540: add user_id to authtoken response
+81bbb41 LP16190617: guest user notification on admin/access time changes LP16048893: keyWas* notifications to lock owner/admins: sent but not correct tex. Cleanup of notification generation logic.
+ba5e7bd cherry-picked Steven's unmergeable change, as-is (hopefully), then merged and minor fixes: LP16317888 Refactoring to link notifications to events
+5d77688 LP16298471 Added auto_unlock to keys
+9eb8488 LP15798105: Owner or Admin can remotely give a key to another user.
+bfc4fe7 LP16396302; defer bluetooth_address from POST to PUT
+9ba089e LPunreported: remove bogus commission_date default, refactor locks_users endpoint param to lock_id for clarity.
+9acd8ed LP16364182: /locks DELETE endpoint for lock decommissioning API: /locks POST/PUT reply payloads, /notification corrections, expunge /<this controller>/<this table name>_id ,
+1ec42a3 LP16242345 server: auto-generated owner/admin key: owner key LP16361084 server: /locks complete payloads. universal server_time Full db record on /notifications GET More complete locks_controller_tests.
+c47c959 LP16317888 Sending push now as a callback on notification create
+962b568 LP15516492 - Ie06d1214 - I7b55e434 - Fix attr_accessible and rake
+bce5351 LP16242345: auto-generated owner/admin key owner generation, tests not complete. rename inviter_user_id to sharer_user_id populate key fields
+3394b2e minor sprint 4 changes, inviter->sharer
+df19db6 LP16293259 Trying to add coverage numbers to Jenkins
+27f9c52 LP16293259 Removing change to Rakefile as it breaks Heroku
+d34217e LP15516492: /locks and /locks/id endpoints for commissioning sequence
+a91d360 LP16293259 Adding ci_reporter gem for use with Jenkins
+25d6091 LP16049930 Fixing bug where incorrect email occassionally sent
+1e3cfe7 Migration files for database changes
+60317db remove lock.location, complete add lock.orientation+auto_unlock, prep to use string parameters
+d8185c8 LP15512593 server: ...Admin...can see the list of locks and keys in their keychain Many other payload corrections and payload test additions.
+369c2b5 16164724: Added additional tests to endpoints without authtoken param
+175fae0 LP16171102 server: /events not returning events for lock owners
+e56ef1d 16164724: Removed authentication from lock accessed endpoints
+e68e2e0 Merge "LP16049930 Add support to create an unconfirmed account"
+1a80426 LP16049930 Add support to create an unconfirmed account
+6fd2757 LP16227234 Validating Email Addresses
+a651294 Merge "16226417 Changed authentication for locks"
+56afedb 16226417 Changed authentication for locks
+687da1e LP16049178 Add email notifications on key share
+2c298b9 LP16005209 Updated tests and one fix for temp password accounts
+909eaaf Merge "LP16049178 Adding key_id to push notification"
+54d9a8a LP16049178 Adding key_id to push notification
+c83021c LP16187825 Add debug_push=true option to use UA debug keyset
+f0e7837 added failed status
+0731b35 Merge branch 'master' of ssh://goji.tactelus.lan/sera/server into gw2
+c810c28 LP16183663: refactor reply payload generation, clean up payload field list Remove obsolete fields, test time_constraints. Misc API spec corrections for Sprint 3, esp. create account.
+9fb6d97 Merge "LP16005209 Confirm and update user accounts before login"
+c19ae19 LP15519254 schema.rb for migration
+0ba9570 LP16005209 Confirm and update user accounts before login
+1e7ad19 Merge "16005437 Adding case to handle invited user in wireframes"
+c237ac6 16005437 Adding case to handle invited user in wireframes
+22e674c LP15519254: Added endpoint for /locks/serial/<lock_serial> - created database migration, added enpoint and tests
+7451fbb LP16005437 Renaming /user to /users to match spec and fixing route
+75fbd63 LP16005437 existing account check (receive access)
+1519436 Merge "LP16099566 Workaround to log request parameters"
+a5c34b9 LP16066893 Accept lock_serial as alternative to lock_id
+00938e0 LP16099566 Workaround to log request parameters
+a888138 LP16066893 Adding lock_serial column to DB
+adae14a require event.lock_id
+81c33fd Merge "Sprint 3 changes"
+06dbeea Sprint 3 changes
+ade8472 LP15997902 No notification for lock/unlock events by that user
+52a6d54 A few small development helpers for working with tests
+11da402 Merge "LP15739583 Start of updating to UrbanAirship V3 API"
+302d23f Merge "Adding Howard and Parima to default database"
+60907b0 Adding Howard and Parima to default database
+9e1ba3f final 0.0.5 sprint 2 spec, plus prelimiary sprint 3 changes
+d85626e LP15739583 Start of updating to UrbanAirship V3 API
+2ecf664 generate JSON payloads for API spec
+8b412ce Merge "remove unused event associations"
+0cba3cb Changing to production server keys
+8d63b1f remove unused event associations
+464f821 LP15969016: Fixing development ruby version requirement
+a150936 Merge "LP15875362 Cleaning up Gemfile to prevent warnings."
+9f617ae Merge "LP15964578 Additional debug for push notifications"
+7445842 LP15964578 Additional debug for push notifications
+27bbc6d Merge "LP15629720 Updating email address domain"
+672e35c LP15903440 Fix model relations so RailsAdmin works
+5c04594 Merge "LP15629720 Adding additional test users"
+b0163ee LP15629720 Updating email address domain
+36a4aea LP15875362 Cleaning up Gemfile to prevent warnings.
+5b71b8d LP15629720 Adding additional test users
+551a8b7 LP15223699 Push notification updates
+b6121d5 add event.int_value to payloads (no notification), make create_integration_data.rb work
+90274c1 LP15629720: Updating sample data creation script
+d0d133c minor corrections from review, all tests pass
+5451897 new urbanairship credentials
+f9b6e22 LP15519506, 15519219: event notifications to admins
+2015a1a LP15519506, 15519219: event notifications to admins
+a990665 LP: add admin user to lock, fixes to prev ci
+f283a61 LP15519506: sprint 2 schema refactor, events, general cleanup
+e3b5758 LP15519506: sprint 2 schema refactor, events, general cleanup
+42b5422 Update for NGINX
+45322cf Change from CRLF to LF terminators
+836226e Get rid of apparent garbage characters in file.
+ac51e65 Update provfile for NGINX buildpack
+db68b70 Add NGINX multi-buildpack
+8d5bcc2 Deleted spurious image file.
+84c1f33 Changed log level to debug.
+08e0bac Updated Bluetooth names for current lock hardware.
+7745990 Should not have changed original version in which New Relic license key is read from config var.
+8e80112 Updated with Goji license key
+544fe9d just testing
+ff53863 increased worker timeout
+50d00d1 add higher rack timeout value
+65d8496 make production releases non-destructive
+ed3e7c4 updates
+b925ce4 updates
+c719d38 precompile assets fixes
+7a5b076 checking in precompiled assets
+c924939 updates
+668cef8 staging environment update
+5cf4ec9 missing staging environment configuration
+d60301f re-enable security
+221b6ed added some base64 encode tests
+c14ccf5 test jpeg
+8d8bfe3 code only release changes to staging
+28c9899 added some debug information
+94c46d2 changed airbrake api key to heroku managed one
+d43bcf0 remove uglifier
+d665dc2 updates
+da40879 remove unused assets group from Gemfile
+6db6a9f updated gems, rails 4 final
+876273b change load data
+fabc92a use time based parsing
+de7828b uncomment release
+dfb681d comment out release task
+e1e19cd don't load unnecessary modernizer js
+61b1f04 improve documentation
+08414f5 updates for new database for staging
+aacc1b0 updated heroku db url
+35177d5 fix bug in expiring url try call
+326ef5a use old style syntax on create
+fb177fd refactor lock_access
+0a35870 updates
+660b2b0 updates for nil object on url
+9958079 change mechanism
+755749c updates, put picture_url directly onto notifications
+07433ac expiring urls
+3a7fde1 updates
+40dfaea hand url back on pictures
+dc98a50 turn off post-processing
+67a822e updates
+f57e6f5 turn off CSRF
+6fb5213 simplify picture process code
+d48fd67 fix up lock_access_controller
+aa6612e fix controller test
+8648fa6 fix issue with signing in on test
+e58c23e updates, fixes
+f340ae4 updates
+ee035f8 use less gems
+a1c45aa move to rails_12factor gem
+2cb67fa fix issue with scope on current_account
+48859bd updates for devise respecting no regex anchors
+3969a88 syntax change
+6cd9bcb try other version of paperclip
+184ece6 fix issue with hard to read exceptions
+cb0177a add back in minitest/spec stuff
+8f20a6e updates
+bb2cc39 fixing minitest syntax and setup for later minitest versions
+ce01594 processing picture
+03a2471 updated doc on production release task
+db0c49d enable notifications index to serve picture_id
+5aac988 update schema to support picture_id
+575c68f updates
+bcbea76 updates
+d667c7f updates, picture controller show view
+abce30c updated schema.rb
+412c429 reload staging data in task
+af96d94 flattened migrations
+9647bbe updates
+aef7fb0 updates
+e9316ea documentation
+0d85be2 Bundler.with_clean_env block
+8678dac remove ruby version
+5307500 update ruby gemset
+a846512 update paperclip styles
+355b3b3 updated paperclip config settings
+cf08fcd add paperclip support
+e64c293 updates for paperclip
+56a35bb run on edge version of paperclip
+c826f1f updates
+50eee11 don't ignore bin
+5d8fae0 remove rename
+e0a6fe4 fix application name issue
+3523ca8 don't reset db on deploy to staging
+92cdb14 upates
+2201c79 rename rails admin
+9ff1a33 updates, remove last idk traces
+99b6117 updates
+dff9417 add heroku rails 4 gems
+1502429 Merge branch 'staging' into production
+d2f8634 updating release task
+ca0ae5f updated release task
+d61f79e upates
+091c12b update release task not to depend on .git/config
+c953181 updates
+afcaa05 initial production commit
+24ffd5d update release tasks
+a86eda7 updated schema
+1f21144 fix up release tasks, refactor naming
+b23e8a6 updates
+54bb37c updates
+423483c add config/database.yml.example
+58b7f02 updates
+b792cf0 fixed tests
+e2e4884 idk-server running on rails 4. needs additional fixup
+ef0810c added files
+f57c77c updated to modern rvm, all tests passing, but warnings on libxml and yaml
+60b6bd3 update rvmrc to latest patch of 1.9.3
+81cd793 Merge branch 'staging' into production
+fb862f2 cleanup
+464a74b tweak to simplecov
+a1b1a63 remove unused code
+9f1fee4 fix issue with simplecov command name, update bundle, fix troublesome date test in notifications
+424dcf0 additional unit test for new logic on key
+d84ef90 handle iso-8601 from utc in tests
+0d6a7ce add lock_access method to key, functional tests, change json
+cfcafac add last access attribute to individual keys and functional test for such
+8f7d64f application controller
+e525385 application controller test
+c0738b8 fixed issue in device delete method
+90ca2d0 test protected method in devise accounts
+a288d8b updated documentation
+201fd38 additional coverage where possible on controllers
+5fc284b model coverage back to 100 percent
+41c1178 additional tests for key and notifications
+d2ac591 latest factory_girl
+880f4b3 Merge branch 'master' into factory_girl
+126ae06 remove hooks for deprecated moonshado sms service
+e708416 update database_cleaner; fix issue with devise being required twice
+fd02b68 security update for rails and JSON gem, updated bundle dependencies
+81f20c8 updates
+2ad2e25 minitest
+af5e031 Merge branch 'master' into factory_girl
+6643cc6 maintenance on test helper
+a002e6f time constraint
+33a8c9c additional tests for time_constraint
+28b1d13 additional tests for device
+3ea45e7 tweak activerecord call in send_apn
+f39a761 add back uniqueness constraint; refactoring
+2f2dca1 change device behavior when creating with identical token, change aps service behavior on mark read and count
+eaba233 add delete action to devices controller
+8ad8d2c fix issue with idk-console mark_read method; add decrement apn badge on notification mark as read
+ee1d3f6 implement autobadge for apple push notifications
+b81ccb6 updated erd
+5517ae9 updated erd
+1a6cc5e change devices registration error to 500 class
+be5e2a3 WIP tests, clean up documentation
+72275d9 WIP apn notification backend tests
+cb147d9 add devices controller to rescue_from list
+772ae5e Merge branch 'master' into factory_girl
+7df985b add sound to notifications
+aca73fb change key info for urban airship
+5fe8da9 re-enable apn mechanism
+5bb5ad9 Merge branch 'staging' into production
+2b9c43f disable apn notification mechanism
+9a93b18 WIP factory girl switchover
+8fc42b9 Merge branch 'master' into factory_girl
+17c71f3 changed device validations
+26abce5 tests on device controller
+3712945 add certified gem for auto handling of OpenSSL certification
+2486ab7 added index for devices
+1f05c1d tweak to reload class
+c89b108 refactor some more
+29476d3 refactoring, clean up
+ead61c7 refactoring, clean up
+b8ecad4 additional tests
+ce1b3ac passing tests
+16bd332 fixed up missing tests, added push notificaiton support to keys
+67f5c32 fix up routing, remove old controllers
+afc1183 new devices infrastructure
+91ad79c add devices table support to user
+13ec9ce add devices table support to user
+dfe07a8 added apn_controller
+4f1b164 Merge branch 'master' into urbanairship
+bb06787 add config for urbanairship
+3a9730b remove base conversion on bitmask output
+35e5a6c change bitmask value from string to int
+37ba766 WIP tests
+b1409c6 WIP higher coverage on tests, valid_days_mask for time_constraints
+0d3cb94 added some tests, refactoring
+94fda4e remove bad helper test
+b80991a refactor error message
+a933f5d issue with time_constraints array name
+31155c1 add rescue on nil account name
+65665ad support nil dates
+196723c parsing for time
+55d648a WIP tests
+82be985 changes for parsing datetime on key create
+549e659 remove reloading database on deploy
+6e711bf refactor naming on key method to class method; add key naming conventions to load data
+f594658 change sleep to 15 seconds
+d658674 Merge branch 'master' into factory_girl
+69c56d7 add 12 second sleep to utility controller
+c909c59 first pass on clear data and reload data buttons
+60ba987 user should use dependent => delete_all on has_many and not dependent => destroy
+246e216 reload data rake task, seperate admins from reload
+7dcbcef WIP Factory
+2f6faf0 updated .slugignore
+82ebc97 updated erd
+36fe007 Merge branch 'staging' into production
+02b1d3a code for reset production data
+a890449 remove double notification on key issue
+95436d7 remove staging database on deploy
+0ccd28a add new key name behavior
+2d1c1f2 devise mailer changes
+655337e remove display name required test, add updating key display_name on confirmation and functional test
+c2c6d3b change display_name behavior, change display_name tests, add user email to key json
+92e511c slight change on html exceptions
+ce61492 tweak html exception
+9b83afa refactor exception handling
+97759a8 updates
+1a0d30e push notification api first pass
+ed32edd tweak return json structure slightly and improve functional test
+1c13aca change json output on key creation
+deaf130 key creation code
+ab5b2e2 refactoring
+56d648e add in process mailcatcher for development
+b3dc78f try silence deprecation warnings
+a66fd71 fixed issue in data rake tasks with incorrect comma in block
+20dde3d updated schema
+a601b54 fix unique constraint on token issue in migration
+9a02ccc fix staging migration issue
+5d77499 don't auto-register moonshado keywords in production
+deebf05 removed sign up links from site
+dfa9dd8 Merge branch 'staging_hotfix'
+f07171e modify views to prevent external sign in links
+2d569ba add production toggle to idk-console.rb
+3e17690 ready for deploy
+bcc180c shore up tests, remove mailer and mailer tests
+cf10828 add tests, fix small issue with keys create
+a7dbe9a fix model documentation
+607ca99 change production deprecation notice to correct value
+4674117 ensure confirmation in load tasks
+47e1b76 added mailcatcher for development mode
+c2fe379 Merge branch 'master' into devise_confirmation
+784bc58 update bluetooth names in the seed data
+3bce6f4 reconfirmable changes
+cb9f83e Merge branch 'master' into devise_confirmation
+80768c4 add support for reconfirmable
+4e23455 Merge branch 'master' into staging
+9366bc4 Merge branch 'master' into production
+05e6df0 remove reset code from release task
+f84e68e Merge branch 'master' into production
+b7b801f change for reseting production database
+52f882c fix accounts test
+86e887b Merge branch 'html5_layout' into devise_confirmation
+defcfb8 fix keys controller create json, fix missing environment options for action_mailer
+ff83fac support MAILER_URL for mailing in production mode
+9a8493e fix issue with keys controller json on create, add missing action_mailer host option in test environment
+fb92193 change for minimum chars in devise 2.2 on passwords
+c56188c json support for devise 2.2
+d857564 add missing devise 2.2.x localization key and better docs in application controller
+6f69e16 updated devise to latest version
+d9dad9d first pass on account confirmation with password
+c95a61a remove explicit send in keys controller
+7229ad7 missing methods in account
+ac1d2d8 changed for confirmable with passwords
+05be03b add ahoggett as development mode mailer, fix issue with bad config initializer, more changes to key creation API
+9c3c842 enable accounts to be created with only email
+f207b34 add confirmation migration
+f474084 Merge branch 'master' into devise_confirmation
+75bf530 Merge branch 'master' into staging
+984f646 remove missing image calls from placeholder stylesheet
+0420aa9 Merge branch 'master' into staging
+ed35857 fix test descending from minitest::spec
+c9e10f6 Merge branch 'master' into staging
+33eca1c updates
+af23e9e spike on devise confirmation
+2c4bd5d fix json response on 500 errors
+c22bd27 fixed issue with notifications in seq_nos controller, tests
+a173669 fix issue with simplecov merging
+430ca9d fix up failing tests
+58931be updates for Mailer
+7c91f77 WIP functional tests, key creation
+89090cf WIP Functional tests
+5a8fc99 fixed issue with singleton routing declaration
+3b0a52e WIP functional tests
+2a5bb0a WIP functional tests
+18e531a remove debugger
+324fe6d fix missing module issues with controller tests
+a4896ef added mailer and moonshado sms support
+0fcc2a4 Merge branch 'master' into staging
+19e8b18 fix bluetooth name format in tests
+b4c7b49 tests for user
+5547732 fix issue with rails admin user editing
+0a96265 more canonical error on notification bad request
+badcdca Merge branch 'master' into staging
+e4265c4 change edit to update for not. mark action
+66cb1e3 Merge branch 'master' into staging
+5383a15 change release task to avoid reset
+22084e9 changes for notification system
+c6a4c35 updates for idk-console
+0d6668d last access first pass on key
+4ff7af8 WIP improving tests
+edeb429 bluetooth_name format validation
+f7b51d3 added urban airship support
+88384cb Merge branch 'master' into staging
+6be3e5a ensure no endless notifications on out of date keys
+23f8b6a Clockwork process files
+653c6f4 remove delayed_job and add clockwork
+84faf63 bugfix for data in staging
+96a65ed WIP scheduling
+e68444d WIP
+ee0b6a9 updated data
+606820d added new data, create key and revoke key notifications, additional tests
+7a5c28c fix minitest_helper
+b343d00 small tweak to handler
+f11996a remove devise from controllers, use manual account lookup instead
+63de849 changed bluetooth names to corresponsd to demo boards
+94e4154 updated test gems; added token feature to idk-console
+ef3f817 better mini_test generator defaults
+ff5c3c4 add mark_read functionality to idk-console, and to application
+573c8ee refactored locks and keys API
+0c2ed59 add key_id to keys controller
+abbbeb0 remove database reset
+e2258e5 added descending order for notifications, additional tests
+089e9bf Notifications first pass continued
+5d3bc6a WIP notification tests
+3b2ff69 fix notifications controller
+f85bb9f notification first pass
+7280047 remove aux migration
+8fd7177 structural changes, flattened migrations
+a5c05af Merge branch 'cw'
+ff90013 added ap to console
+64482c7 WIP changes
+5b95165 added console for testing
+00fef1b modfiy the rake release tasks to reset db and load seed data
+ac7948e update locks API to include nested keys and key time constraints
+de8cc69 remove postgres serial columns
+7b3bb53 working data load and migrations
+7475144 WIP tests
+9c820c5 WIP tests
+c4289d1 WIP Notifications, Tests, added ctags and tags and ignore for vim
+78d3f64 changes to data models, locks, keys, notifications
+ca7b280 WIP Notifications, database changes
+f2c0ce6 WIP notification migrations
+76a06fd add notifications change, fix missing serial method in initial migration
+b0bd30a WIP notification templates
+9a69ee4 added notification template seeds
+5e3387c added new fields to keys and locks and migrations for LockAccesses
+2b96850 updates
+0cf5691 WIP updates to tests and test framework
+68daa81 annotations
+406a84c callback on keys for display name auto population and truncation
+5f64af8 Data migration for display name; display_name required
+f666ae7 expose display_name in keys controller
+2ad8fde specify app directly for heroku rake airbrake task
+66b8567 add display name to keys, allow edit of notify_owner
+54a2f1f fix for validation on pin_code formatting
+12ce9df remove validation on identifier
+03a4cb9 remove temporary aux migration mechanism
+19b5a1b flattened_migrations
+a80e94a defaulting for locks commission_date
+6b9a055 remove ability to edit commision_date in admin interface
+c04a223 WIP Tests
+a72935b added new relic unicorn support
+a654194 Merge branch 'staging'
+7abbbdd make pin_code settable from rails_admin
+3f5816c update regex validation for pin_code bug
+89d9460 updated keys controller
+f7898ea add pin code, validation to keys
+7c6f08d WIP unit/functional test/specs
+531d03b fix spelling error in schema
+70c0522 more sophisticated query for time constraints
+05afe63 updates
+5e45987 WIP unit tests; add user name fields to key json
+e0ea825 WIP testing
+75459bf updated erd diagram
+8bdcb6e updated key json output, updated time contraints editibility in rails_admin
+4235f2d updates
+11fe40d identifier
+27bb435 add identifier serial column
+f4bf1a7 add token_number to keys
+ffb9e03 add uuid generation to keys
+d1c729c add uuid to keys
+7f63404 updated development s3 support
+ce14b8a get minitest running
+9d4b1cd attribute_accessible for lock
+1d9b28c add bluetooth_name, data migration and lock.location to schema
+8573953 updates for minitest_capybara
+54889d0 critical security update for rails
+0191c98 save key
+1aa69d5 changes to API
+86e045f remove circular dependency
+c58fea3 remove deprecated image controllers
+d7cc6d6 notify airbrake of deploys
+b8e7ee3 add dependencies
+6dc00c8 updates to authtoken and keys
+9c5041e updates for keys
+4693416 seq_no in API
+e83850a mailer support
+26a32db small fix on locks controller
+d98d78e WIP updates
+da53b96 updated ERD, fixed syntax error
+d6de0fa migrations, sequence_nos controller, paperclip attributes
+6a624d1 add status to locks
+35528ec syntax error in migrations
+b70bb65 Paperclip
+210d3bb New relic gem support
+156ce87 WIP First cut at API, added sequence numbers
+b886b80 WIP changes
+6a7c7e3 add keys data migration
+e58c8fe WIP: work on controllers
+d872f27 updates for controllers
+0dbaf61 updates for ERD
+3cd2b66 Added additional image fields to locks
+d6c4739 WIP data model changes
+fbfa339 more fixes for rails_admin
+7fb8e8e better fields
+7026861 WIP
+fef7961 default admin
+c9416f1 Fixing database issues, data validations, rails admin work
+737e84a updated database schema
+589f105 reset database
+8a0d7d6 rails admin working
+ca0979c WIP
+a42c136 fix deprecation warnings differently
+ab79179 add heroku precompile:false flag
+5e9dad2 add back uglifier for boilerplate
+47c1cfd set up home controller
+18d9a2a added airbrake exception reporting
+f889fe8 WIP
+4951139 updated rake tasks
+24fba04 add autoconfirm for resetting database
+d1b4471 using pg:reset for heroku releases
+885f122 updates
+7afcd5c updates
+59b8b12 added html5 boilerplate, devise, and rails_admin
+14932e7 updated gems
+7628f82 schema.rb
+7debaac rake tasks for deploy; fix database.yml
+2980460 Merge branch 'master' of github.com:emmoco/idk-server
+9588dd6 add Procfile, add unicorn worker file for heroku
+46e5810 cleanup
+9bb08f3 initial cut at models
+a3a344e rvmrc
+223c460 initial

@@ -1,0 +1,10 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  external_required_version: MyString
+  internal_required_version: MyString
+
+two:
+  external_required_version: MyString
+  internal_required_version: MyString

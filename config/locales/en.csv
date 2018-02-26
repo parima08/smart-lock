@@ -1,0 +1,34 @@
+NOTIFICATION_LOCK,lock
+NOTIFICATION_LOCK_SUCCESS,$[lockName] was locked at $[eventTimeString] by $[targetUserName]
+NOTIFICATION_ACCESS_FAILURE,$[targetUserName] tried to $[lock/unlock] $[lockName] $[NOTIFICATION_ACCESS_RESULT]
+NOTIFICATION_UNLOCK,unlock
+NOTIFICATION_UNLOCK_SUCCESS,$[lockName] was unlocked at $[eventTimeString] by $[targetUserName]
+NOTIFICATION_LOCK_COMM_DOWN,$[lockName] has lost connection to the Goji service
+NOTIFICATION_LOCK_COMM_UP,$[lockName] has regained connection to the Goji service
+NOTIFICATION_BATTERY_LOW,Replace battery in $[lockName] soon
+NOTIFICATION_BATTERY_OK,Battery level in $[lockName] is okay
+NOTIFICATION_PROXIMITY,Someone is near $[lockName]
+NOTIFICATION_KEY_SHARED_ADMIN,$[lockName] has invited $[targetUserName] to access $[lockName]
+NOTIFICATION_KEY_SHARED,$[lockOwner] has invited you to access $[lockName]
+NOTIFICATION_KEY_SHARED_KEYSHARER_ADMIN,$[sharerDisplayName] has invited $[targetUserName] to access $[lockName] owned by $[lockOwner]
+NOTIFICATION_KEY_SHARED_KEYSHARER,$[sharerDisplayName]  has invited you to access $[lockName] owned by $[lockOwner]
+NOTIFICATION_KEY_REVOKED_ADMIN,$[targetUserName]'s access to $[lockName] has been cancelled
+NOTIFICATION_KEY_REVOKED,Your access to $[lockName] has been cancelled
+NOTIFICATION_KEY_EXPIRED_ADMIN,$[targetUserName]'s access to $[lockName] has expired
+NOTIFICATION_KEY_EXPIRED,Your access to $[lockName] has expired
+NOTIFICATION_ADMIN_SHARED_ADMIN,$[targetUserName] is now a manager for $[lockName]
+NOTIFICATION_ADMIN_SHARED,You are now a manager for $[lockName] owned by   $[lockOwner]
+NOTIFICATION_ADMIN_REVOKED_ADMIN,$[targetUserName] is no longer a manager of $[lockName]
+NOTIFICATION_ADMIN_REVOKED,Your are no longer a manager of $[lockName]
+NOTIFICATION_ACCESS_CHANGED_ADMIN,$[targetUserName]'s access times for $[lockName] have been changed
+NOTIFICATION_ACCESS_CHANGED,Your access times for $[lockName] have been changed
+NOTIFICATION_LOCK_DECOMMISSIONED,$[lockName] was taken out of service at $[eventTimeString]
+NOTIFICATION_USER_DEVICE_CONFIRMED,A new device has tried to access your Goji account.  Check your email to add this device to your account
+NOTIFICATION_ERROR_NOTIFY_OWNER_ADMIN_INTERNAL,Your Goji Lock $[lockName] was unable to update its internal software version. Goji customer support is working on this issue and will let you know when it is resolved
+NOTIFICATION_ERROR_NOTIFY_OWNER_ADMIN_EXTERNAL,Your Goji Lock $[lockName] was unable to update its external software version. Goji customer support is working on this issue and will let you know when it is resolved
+NOTIFICATION_ERROR_NOTIFY_OWNER_ADMIN_NO_DEFINED,No error message defined
+NOTIFICATION_ACCESS_RESULT_INVALID_KEY,without valid access
+NOTIFICATION_ACCESS_RESULT_OUTSIDE_DAY_TIME,out of the the allowed access time
+NOTIFICATION_ACCESS_RESULT_USE_EXCEEDED,but is out of access uses
+NOTIFICATION_ACCESS_RESULT_EXPIRED,but no longer is allowed access
+NOTIFICATION_ACCESS_RESULT_HARDWARE_FAILURE,$[lockName] failed to be $[lock/unlock] by $[targetUserName] and $[is still locked/is still unlocked/status is unknown/is still moving]

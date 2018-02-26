@@ -1,0 +1,6 @@
+<div style="margin: 1em;">
+  <p>You have been given new access times to the Goji Smart lock "<%= @lock.name %>".</p>
+  <p><%= @instructions %></p>
+</div>
+<a style="display: block; border-radius: 10px; background-color: #d0342e; color: white; padding: 1em; margin: 1em; text-align: center; text-decoration: none;"
+ href="<%= store_go_url key_id: @key.id %>"><%= @instr %></a>

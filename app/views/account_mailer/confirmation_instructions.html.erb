@@ -1,0 +1,7 @@
+<div style="margin: 1em;">
+  <p>Click the button below to verify your email address and continue creating your Goji account:</p>
+</div>
+
+<a style="display: block; border-radius: 10px; background-color: #d0342e; color: white; padding: 1em; margin: 1em; text-align: center; text-decoration: none;"
+href="<%= store_go_url email: @resource.email, confirmation_token: @resource.confirmation_token %>"
+>Continue</a>

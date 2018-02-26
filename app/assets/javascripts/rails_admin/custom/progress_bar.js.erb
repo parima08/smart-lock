@@ -1,0 +1,126 @@
+app_globals = JSON.parse('<%= RailsAdmin.config.registry["app_globals"].to_json()  %>')
+
+$.fn.zxcvbnProgressBar = function (options) {
+    //init settings
+    var settings = $.extend({
+        userInputs: [],
+        ratings: ["Please use ", 
+                  "Pretty good password", 
+                  "Strong password", 
+                  "Cannot use word: ",
+                  "Continue to use more symbols, numbers, capital letters, and characters"],
+	// Too soon to collect app_globals?
+        banned: ["goji", "room5", "password", "hello", "world"],
+        allProgressBarClasses: "progress-bar-danger progress-bar-warning progress-bar-success progress-bar-info progress-bar-striped active",
+        progressBarClass0: "progress-bar-danger progress-bar-striped active",
+        progressBarClass1: "progress-bar-warning progress-bar-striped active",
+        progressBarClass2: "progress-bar-success progress-bar-striped",
+        rails_admin: false,
+    }, options);
+
+    return this.each(function () {
+        settings.progressBar = this;
+        settings.widthItem = this
+        //init progress bar display
+        updateProgressBar();
+        //Update progress bar on each keypress of password input
+        $(settings.passwordInput).keyup(updateProgressBar);
+        $("form").submit(setPasswordEntropy);
+        $(settings.recordEntropy).prop('readonly', true);
+    });
+
+    function scorePercentage(entropy) {
+	return entropy/app_globals.password.entropy.max*100
+    }
+
+    function setPasswordEntropy(event) {
+        var password = $(settings.passwordInput).val();
+        var result = zxcvbn(password, settings.userInputs);
+        if (settings.rails_admin && result.entropy < app_globals.password.entropy.good) {
+            alert("Please select a strong password");
+            event.preventDefault();
+        }
+        $(settings.recordEntropy).val(scorePercentage(result.entropy));
+	// See jquery_ujs.js.  Override RailsAdmin anti-reclick protection.
+	setTimeout(function(){ $.rails.enableFormElements($("form")); }, 100)
+    }
+
+    function empty(str) {
+	return (str === undefined) || (str == "")
+    }
+
+    function updateProgressBar() {
+        var password = $(settings.passwordInput).val();
+        if (empty(password)) {
+	    return resetBar();
+	}
+	if (bannedWords(password)) {
+	    return;
+	}
+        var result = zxcvbn(password, settings.userInputs);
+	score = scorePercentage(result.entropy);
+        $(settings.widthItem).css('width', score + '%');
+        $(settings.recordEntropy).val(score);
+        var progressBar = $(settings.progressBar);
+        var message = $(settings.message);
+        if (result.entropy < app_globals.password.entropy.medium) {
+            progressBar.removeClass(settings.allProgressBarClasses).addClass(settings.progressBarClass0);
+            message.html(feedbackMessage());
+        }
+        else if (result.entropy >= app_globals.password.entropy.medium && 
+		 result.entropy < app_globals.password.entropy.good) {
+            progressBar.removeClass(settings.allProgressBarClasses).addClass(settings.progressBarClass1);
+            message.html(settings.ratings[1]);
+        }
+        else
+        {
+            progressBar.removeClass(settings.allProgressBarClasses).addClass(settings.progressBarClass2);
+            message.html(settings.ratings[2]);
+        }
+    }
+
+    function feedbackMessage(){
+        var password = $(settings.passwordInput).val();
+        var msg = []   
+        if(!(/[a-z]/).test(password)){ msg.push("characters"); }
+        if(!(/\d+/g).test(password)) { msg.push("numbers"); }
+        if(!(/[A-Z]/).test(password)){ msg.push("capital letters"); }
+        if(!(/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/).test(password)){  
+            msg.push("symbols");
+        }
+        switch(msg.length){
+            case 0:
+                return settings.ratings[4];
+            case 1: 
+                return settings.ratings[0] + msg[0];
+            default:
+                return settings.ratings[0] + msg.slice(0, msg.length - 1).join(', ').concat(' and ' + msg[msg.length - 1])
+        }
+    }
+
+    function bannedWords(password){
+        var progressBar = settings.progressBar;
+        var email = $(settings.email).val();
+        var banned = settings.banned
+        if (empty(email)) {
+            banned = banned.concat(email.toLowerCase().substring(0, email.indexOf('@')).split("."));
+        }
+        for(var i = 0; i < banned.length; i++){
+            if(password.toLowerCase().indexOf(banned[i]) != -1){
+                resetBar();
+                $(settings.message).html(settings.ratings[3] + banned[i]);
+                return true
+            }
+        }
+        return false
+    }
+
+    function resetBar(){
+        var progressBar = settings.progressBar;
+        $(settings.widthItem).css('width', '0%');
+        $(progressBar).removeClass(settings.allProgressBarClasses).addClass(settings.progressBarClass0);
+        $(settings.message).html(feedbackMessage());
+    }
+};
+
+
